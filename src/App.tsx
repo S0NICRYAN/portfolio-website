@@ -112,7 +112,7 @@ const App: React.FC = () => {
       id: 1,
       title: "Returning Home",
       location: "Shanghai, China",
-      date: "December 2024",
+      date: "December 2023",
       description: "Returning to my childhood home and reunited with my old helper!",
       image: "/images/shanghai.jpg"
     },
@@ -470,7 +470,7 @@ const App: React.FC = () => {
                 </a>
                 <a
                   href="/files/Resume_Ryan_Cheng.pdf"
-                  download="Ryan_Cheng_Resume.pdf"
+                  download="Resume_Ryan_Cheng.pdf"
                   className="block px-3 py-2 bg-teal-500 hover:bg-teal-600 text-white rounded-lg mx-2 mt-2 transition-colors flex items-center gap-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -537,8 +537,8 @@ const App: React.FC = () => {
                       onClick={() => setCurrentRoleIndex(index)}
                       className={`w-3 h-3 rounded-full transition-colors duration-200 ${
                         index === currentRoleIndex 
-                          ? 'bg-white' 
-                          : 'bg-white bg-opacity-50'
+                          ? 'bg-black dark:bg-white' 
+                          : 'bg-black bg-opacity-50 dark:bg-white dark:bg-opacity-50'
                       }`}
                       aria-label={`Go to role ${index + 1}`}
                     />
@@ -557,7 +557,7 @@ const App: React.FC = () => {
               </div>
 
               {/* Action Buttons */}
-              <div className="space-x-4">
+                <div className="flex flex-col sm:flex-row sm:justify-center space-y-2 sm:space-y-0 sm:space-x-4">
                 {roles[currentRoleIndex].buttonText === "View My Collection!" ? (
                   <button 
                     onClick={() => setShowCollectionModal(true)}
