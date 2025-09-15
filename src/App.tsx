@@ -11,6 +11,10 @@ const App: React.FC = () => {
   const [showTravelModal, setShowTravelModal] = useState(false);
   const [activeTravelTab, setActiveTravelTab] = useState('trips');
   const [activeCollectionTab, setActiveCollectionTab] = useState('pokemon');
+  const [isHeroVisible, setIsHeroVisible] = useState(false);
+  const [isImageVisible, setIsImageVisible] = useState(false);
+  const [isTextVisible, setIsTextVisible] = useState(false);
+  const [isButtonsVisible, setIsButtonsVisible] = useState(false);
 
   // Handle escape key to close modals
   useEffect(() => {
@@ -24,6 +28,18 @@ const App: React.FC = () => {
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
   }, [showTravelModal, showCollectionModal]);
+
+  // Trigger staggered slide-in animations on page load
+  useEffect(() => {
+    const timers = [
+      setTimeout(() => setIsHeroVisible(true), 100),
+      setTimeout(() => setIsImageVisible(true), 300),
+      setTimeout(() => setIsTextVisible(true), 600),
+      setTimeout(() => setIsButtonsVisible(true), 900)
+    ];
+
+    return () => timers.forEach(timer => clearTimeout(timer));
+  }, []);
 
   // Collection data
   const collectionItems = [
@@ -487,12 +503,16 @@ const App: React.FC = () => {
 
       {/* Hero Section */}
       <section 
-        className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800"
+        className={`pt-32 pb-16 px-4 sm:px-6 lg:px-8 relative bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 transition-all duration-1000 ease-out ${
+          isHeroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
       >
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-8">
             {/* Static Profile Photo */}
-            <div className="w-48 h-48 mx-auto rounded-full mb-6 border-4 border-white shadow-lg overflow-hidden bounce-slow">
+            <div className={`w-48 h-48 mx-auto rounded-full mb-6 border-4 border-white shadow-lg overflow-hidden bounce-slow transition-all duration-700 ease-out ${
+              isImageVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
+            }`}>
               <img 
                 src="/images/hero.jpg" 
                 alt="Ryan Cheng" 
@@ -502,7 +522,9 @@ const App: React.FC = () => {
             
             {/* Carousel Container */}
             <div className="relative">
-              <div className="text-center mb-8">
+              <div className={`text-center mb-8 transition-all duration-700 ease-out ${
+                isTextVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
+              }`}>
                 <p className="text-2xl bg-gradient-to-r from-cyan-400 via-blue-700 to-purple-600 bg-clip-text text-transparent mb-4">Hello, I'm</p>
                 <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-700 to-purple-600 bg-clip-text text-transparent mb-6 pb-2">
                   Ryan!
@@ -530,7 +552,9 @@ const App: React.FC = () => {
               </button>
 
                 {/* Dots Indicator */}
-                <div className="flex space-x-2">
+                <div className={`flex space-x-2 transition-all duration-700 ease-out ${
+                  isTextVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}>
                   {roles.map((_, index) => (
                     <button
                       key={index}
@@ -557,7 +581,9 @@ const App: React.FC = () => {
               </div>
 
               {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row sm:justify-center space-y-2 sm:space-y-0 sm:space-x-4">
+                <div className={`flex flex-col sm:flex-row sm:justify-center space-y-2 sm:space-y-0 sm:space-x-4 transition-all duration-700 ease-out ${
+                  isButtonsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}>
                 {roles[currentRoleIndex].buttonText === "View My Collection!" ? (
                   <button 
                     onClick={() => setShowCollectionModal(true)}
