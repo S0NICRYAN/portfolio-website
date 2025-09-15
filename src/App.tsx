@@ -342,11 +342,11 @@ const App: React.FC = () => {
   const skillsCategories = [ // Updated skills
     {
       title: "Product Management",
-      skills: ["Figma","Product Strategy", "Design Thinking", "Roadmap Planning", "User Research", "A/B Testing", "Stakeholder Management", "Agile/Scrum"],
+      skills: ["Figma","Product Strategy","User Stories","Empathy Maps", "Design Thinking", "Roadmap Planning", "User Research", "A/B Testing", "Stakeholder Management", "Agile/Scrum"],
       color: "bg-purple-100 text-purple-800 border border-purple-200"
     },
     {
-      title: "Software Development", 
+      title: "Software Development",
       skills: ["JavaScript", "TypeScript", "Vue.js", "React", "Node.js", "HTML", "CSS", "Tailwind CSS", "Next.js", "Express"],
       color: "bg-green-100 text-green-800 border border-green-200"
     },
@@ -657,9 +657,8 @@ const App: React.FC = () => {
           </div>
           <div className="max-w-3xl mx-auto">
               <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-            I’m a penultimate-year Information Systems student at SMU, majoring in Business Analytics and FinTech, 
-            passionate about innovating and solving real-world user problems by turning complex challenges into simple, 
-            effective designs and clean, efficient code.
+              I’m a penultimate-year Information Systems student at SMU, majoring in Business Analytics and Financial Technology.
+              My interests span software development, product management, data analytics and Web3 — where I enjoy building solutions that merge technology with user needs, while staying curious about emerging trends and practical applications.
             </p>
             <p className="text-lg text-slate-600 dark:text-slate-300">
               When I'm not coding, you can find me exploring new technologies, 
