@@ -392,7 +392,7 @@ const App: React.FC = () => {
               </a>
               </div>
               <a 
-                href="/files/Resume_Ryan_Cheng.pdf" 
+                href="/files/Ryan_Cheng_Resume.pdf" 
                 download="Ryan_Cheng_Resume.pdf"
                 className="bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-lg transition-colors duration-300 flex items-center gap-2 text-sm font-medium"
               >
@@ -486,8 +486,8 @@ const App: React.FC = () => {
                   Contact
                 </a>
                 <a
-                  href="/files/Resume_Ryan_Cheng.pdf"
-                  download="Resume_Ryan_Cheng.pdf"
+                  href="/files/Ryan_Cheng_Resume.pdf"
+                  download="Ryan_Cheng_Resume.pdf"
                   className="block px-3 py-2 bg-teal-500 hover:bg-teal-600 text-white rounded-lg mx-2 mt-2 transition-colors flex items-center gap-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
