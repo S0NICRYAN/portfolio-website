@@ -608,8 +608,8 @@ const App: React.FC = () => {
                   </a>
                 )}
                 <a 
-                  href="/files/Resume_Ryan_Cheng.pdf" 
-                  download="Resume_Ryan_Cheng.pdf"
+                  href="/files/Ryan_Cheng_Resume.pdf" 
+                  download="Ryan_Cheng_Resume.pdf"
                   className="px-6 py-3 bg-white text-slate-700 font-medium rounded-lg transition-all duration-200 hover:bg-teal-500 hover:text-white hover:scale-105 shadow-lg inline-block"
                 >
                   Download Resume
